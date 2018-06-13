@@ -1,5 +1,7 @@
 # API
 
+**Status:** WIP (WORK-IN-PROGRESS)
+
 ## A Arquitetura
 
 ### Entidades
@@ -19,6 +21,20 @@ O usuário pode ter **one-to-many** eventos, isto é, ele poderá criar eventos 
 #### Endereço do Usuário (Address)
 
 Por definição de um escopo limitado, consideraremos, apenas o CEP que é um valor único e consistente. O CEP pode ser de muitos usuários, desta forma, evitamos inconsistências tais como: nome errado de cidade (béuzonte, bh, belo horizonte e etc), de endereço.
+
+### Serviços de Previsão de Tempo
+
+#### Interface
+
+Para não depender de apenas um serviço, a ideia é usar o padrão **Adapter**, desta forma abstraímos em uma classe o que precisamos que o serviço traga para nossa aplicação e os **Adapters** (adaptadores, melhor rs) de cada serviço de previsão, irá conter sua lógica para trazer o resultado que precisamos.
+
+#### OpenWeatherMapAdapter
+
+WIP
+
+#### YahooWeatherAdapter
+
+WIP
 
 ## Como rodar?
 
@@ -43,11 +59,3 @@ python manage.py db init
 python manage.py db migrate
 python manage.py db upgrade
 ```
-
-3. Rode o servidor =P
-
-```shell
-python manage.py runserver
-```
-
-4. Ser feliz.
